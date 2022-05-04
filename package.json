@@ -1,0 +1,20 @@
+{
+  "name": "ddd-utils",
+  "version": "0.0.0",
+  "description": "Domain Driven Design utilities",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AminTaghikhani/ddd-utils.git"
+  },
+  "author": "Amin Taghikhani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AminTaghikhani/ddd-utils/issues"
+  },
+  "homepage": "https://github.com/AminTaghikhani/ddd-utils#readme",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
