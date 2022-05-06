@@ -1,4 +1,6 @@
-export abstract class Identifier<T> {
+import { IEqualable } from '../utils';
+
+export abstract class Identifier<T> implements IEqualable<Identifier<T>> {
   protected readonly _value: T;
 
   protected constructor(value: T) {
