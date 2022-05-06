@@ -24,4 +24,12 @@ export class BooleanValueObject
   public static create(value: boolean): BooleanValueObject {
     return new BooleanValueObject(value);
   }
+
+  public static createTruthy(): BooleanValueObject {
+    return new BooleanValueObject(true);
+  }
+
+  public static createFalsy(): BooleanValueObject {
+    return new BooleanValueObject(false);
+  }
 }
