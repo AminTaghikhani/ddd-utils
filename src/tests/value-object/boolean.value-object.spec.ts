@@ -1,3 +1,4 @@
+import * as lodash from 'lodash';
 import { BooleanValueObject } from '../../value-object';
 
 describe('Boolean value object test suite', function () {
@@ -49,5 +50,17 @@ describe('Boolean value object test suite', function () {
     expect(obj1).toBeDefined();
     expect(obj2).toBeDefined();
     expect(obj1.toEqual(obj2)).toBeFalsy();
+  });
+  it('should create array of value object with different value and sort them', function () {
+    const objs = [
+      BooleanValueObject.createFalsy(),
+      BooleanValueObject.createTruthy(),
+    ];
+    const unsorted = lodash.cloneDeep(objs);
+    objs.sort((a, b) => a.compareTo(b));
+    for (let i = 0; i < objs.length; i++) {
+      console.log(objs[i], unsorted[i]);
+      expect(objs[i].toEqual(unsorted[i])).toBeFalsy();
+    }
   });
 });

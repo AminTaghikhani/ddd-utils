@@ -12,9 +12,9 @@ export class BooleanValueObject
   compareTo(other: BooleanValueObject): number {
     if ((this.value && other.value) || (!this.value && !other.value)) return 0;
     if (this.value) {
-      return 1;
+      return -1;
     }
-    return -1;
+    return 1;
   }
 
   toggle(): void {
