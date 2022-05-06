@@ -1,8 +1,8 @@
-import { ValueObject } from './value-object';
+import { GenericValueObject } from './generic-value-object';
 import { IComparable } from '../utils';
 
 export class NumberValueObject
-  extends ValueObject<number>
+  extends GenericValueObject<number>
   implements IComparable<NumberValueObject>
 {
   protected MAX = Number.MAX_VALUE;
