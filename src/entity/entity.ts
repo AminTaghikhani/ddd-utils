@@ -2,7 +2,7 @@ import { UUIDIdentifier } from '../identifier';
 import { IEqualable } from '../utils';
 import * as lodash from 'lodash';
 
-export abstract class Entity implements IEqualable<Entity> {
+export abstract class DomainEntity implements IEqualable<DomainEntity> {
   protected readonly _id: UUIDIdentifier;
 
   protected constructor(id: UUIDIdentifier) {
@@ -13,7 +13,7 @@ export abstract class Entity implements IEqualable<Entity> {
     return this._id;
   }
 
-  toEqual(other: Entity): boolean {
+  toEqual(other: DomainEntity): boolean {
     return lodash.isEqual(this, other);
   }
 }
