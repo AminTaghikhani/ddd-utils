@@ -16,11 +16,13 @@ export class Result<T> {
   }
 
   get value(): T {
-    return this._value.value as T;
+    if (this.isOK()) return this._value.value as T;
+    throw new Error('It is a failed result check error method');
   }
 
   get error(): string {
-    return this._error.value as string;
+    if (this.isNotOK()) return this._error.value as string;
+    throw new Error('It is a success result check value method');
   }
 
   isOK(): boolean {
