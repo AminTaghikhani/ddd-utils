@@ -52,7 +52,10 @@ export class Maybe<T> implements IMaybe<T>, IEqualable<Maybe<T>> {
     return lodash.isEqual(this, other);
   }
 
-  public static from<T>(value: Nullable<T>): Maybe<T> {
-    return new Maybe<T>(value);
+  public static from<T>(value?: T): Maybe<T> {
+    const safeValue = lodash.isUndefined(value) ? null : value;
+    return new Maybe<T>(safeValue);
   }
+
+  public static None = Maybe.from<any>();
 }
