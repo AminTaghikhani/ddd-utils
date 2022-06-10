@@ -1,9 +1,8 @@
 import { Identifier } from './identifier';
 import uuid from 'uuid';
-import { Nullable } from '../utils';
 
 export class UUIDIdentifier extends Identifier<string> {
-  constructor(value: Nullable<string>) {
+  constructor(value?: string) {
     super(value || uuid.v4());
   }
 
