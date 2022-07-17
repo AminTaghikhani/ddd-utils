@@ -2,7 +2,8 @@
   "name": "ddd-utils",
   "version": "0.0.0",
   "description": "Domain Driven Design utilities",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "typings/index.d.ts",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
@@ -12,6 +13,10 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage"
   },
+  "files": [
+    "dist/*",
+    "typings/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/AminTaghikhani/ddd-utils.git"
