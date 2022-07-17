@@ -4,6 +4,8 @@
   "description": "Domain Driven Design utilities",
   "main": "index.js",
   "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
     "lint": "eslint ./src/**/*.ts --fix",
     "format": "prettier --write src/**/*.ts",
     "test": "jest",
@@ -33,6 +35,7 @@
     "jest": "^28.1.0",
     "prettier": "^2.6.2",
     "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
     "ts-jest": "^28.0.1",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
