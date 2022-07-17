@@ -26,6 +26,14 @@ export abstract class DomainEntity<PropertyInterface>
     return this._id;
   }
 
+  get createdAt(): BaseDate {
+    return this._createdAt;
+  }
+
+  get updatedAt(): BaseDate {
+    return this._updatedAt;
+  }
+
   toEqual(other: DomainEntity<PropertyInterface>): boolean {
     return lodash.isEqual(this, other);
   }
