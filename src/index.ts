@@ -3,6 +3,7 @@ export * from './identifier';
 export * from './mapper';
 export * from './maybe';
 export * from './pagination';
+export * from './request';
 export * from './response';
 export * from './result';
 export * from './usecase';
