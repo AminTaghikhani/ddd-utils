@@ -1,5 +1,5 @@
 import { Identifier } from './identifier';
-import uuid from 'uuid';
+import * as uuid from 'uuid';
 
 export class UUIDIdentifier extends Identifier<string> {
   constructor(value?: string) {
