@@ -1,9 +1,11 @@
+import { Nullable, Optional } from '../utils';
+
 export interface IMapper<Domain, Orm, Dto> {
-  fromDTO?(model: Dto): Domain;
+  fromDTO?(model: Optional<Dto>): Nullable<Domain>;
 
-  toDTO?(model: Domain): Dto;
+  toDTO?(model: Optional<Domain>): Nullable<Dto>;
 
-  fromORM?(model: Orm): Domain;
+  fromORM?(model: Optional<Orm>): Nullable<Domain>;
 
-  toORM?(model: Domain): Orm;
+  toORM?(model: Optional<Domain>): Nullable<Orm>;
 }

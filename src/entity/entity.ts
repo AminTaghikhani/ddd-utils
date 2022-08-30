@@ -1,36 +1,36 @@
 import { UUIDIdentifier } from '../identifier';
-import { BaseDate, IEqualable, JsDate } from '../utils';
+import { IEqualable } from '../utils';
 import * as lodash from 'lodash';
 
 export abstract class DomainEntity<PropertyInterface>
   implements IEqualable<DomainEntity<PropertyInterface>>
 {
   protected readonly _id: UUIDIdentifier;
-  protected readonly _createdAt: BaseDate;
-  protected readonly _updatedAt: BaseDate;
+  protected readonly _createdAt: Date;
+  protected readonly _updatedAt: Date;
   protected _props: PropertyInterface;
 
   protected constructor(
     props: PropertyInterface,
-    id?: UUIDIdentifier,
-    createdAt?: BaseDate,
-    updatedAt?: BaseDate,
+    id?: string,
+    createdAt?: Date,
+    updatedAt?: Date,
   ) {
     this._props = props;
-    this._id = id || new UUIDIdentifier();
-    this._createdAt = createdAt || new JsDate();
-    this._updatedAt = updatedAt || new JsDate();
+    this._id = new UUIDIdentifier(id);
+    this._createdAt = createdAt || new Date();
+    this._updatedAt = updatedAt || new Date();
   }
 
   get id(): UUIDIdentifier {
     return this._id;
   }
 
-  get createdAt(): BaseDate {
+  get createdAt(): Date {
     return this._createdAt;
   }
 
-  get updatedAt(): BaseDate {
+  get updatedAt(): Date {
     return this._updatedAt;
   }
 
