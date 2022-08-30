@@ -1,6 +1,4 @@
-import { BaseDate } from '../../utils';
-import { UUIDIdentifier } from '../../identifier';
-import { DomainEntity } from '../../entity';
+import { DomainEntity } from '../../src/entity';
 
 interface PersonDomainProps {
   firstName: string;
@@ -10,18 +8,18 @@ interface PersonDomainProps {
 export class PersonDomain extends DomainEntity<PersonDomainProps> {
   private constructor(
     props: PersonDomainProps,
-    id?: UUIDIdentifier,
-    createdAt?: BaseDate,
-    updatedAt?: BaseDate,
+    id?: string,
+    createdAt?: Date,
+    updatedAt?: Date,
   ) {
     super(props, id, createdAt, updatedAt);
   }
 
   public static create(
     props: PersonDomainProps,
-    id?: UUIDIdentifier,
-    createdAt?: BaseDate,
-    updatedAt?: BaseDate,
+    id?: string,
+    createdAt?: Date,
+    updatedAt?: Date,
   ): PersonDomain {
     return new PersonDomain(props, id, createdAt, updatedAt);
   }

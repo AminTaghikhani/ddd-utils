@@ -1,5 +1,5 @@
 import * as lodash from 'lodash';
-import { BooleanValueObject } from '../../value-object';
+import { BooleanValueObject } from '../../src/value-object';
 
 describe('Boolean value object test suite', function () {
   it('should create a value object', function () {

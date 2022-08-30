@@ -1,4 +1,4 @@
-import { PhoneNumberValueObject } from '../../value-object';
+import { PhoneNumberValueObject } from '../../src/value-object';
 
 describe('phoneNumber value object', function () {
   it('should create a value object', function () {
