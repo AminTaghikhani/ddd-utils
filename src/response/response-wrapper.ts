@@ -1,6 +1,6 @@
 import { ResponseStatusCodes } from './status.enum';
 import { Nullable } from '../utils';
-import { PaginationInfo } from '../pagination';
+import { Pagination, PaginationInfo } from '../pagination';
 
 export class ResponseWrapper<T> {
   private readonly statusCode: ResponseStatusCodes;
@@ -112,6 +112,26 @@ export class ResponseWrapper<T> {
       ResponseStatusCodes.NOT_FOUND,
       message,
       null,
+    );
+  }
+
+  public static PAGINATION<T>({
+    data,
+    message = 'عملیات با موفقیت انجام شد.',
+  }: {
+    data: Pagination<T>;
+    message?: string;
+  }) {
+    return new ResponseWrapper<T[]>(
+      data.items,
+      ResponseStatusCodes.OK,
+      message,
+      {
+        page: data.page,
+        size: data.size,
+        totalCount: data.totalCount,
+        totalPage: data.totalPage,
+      },
     );
   }
 }
