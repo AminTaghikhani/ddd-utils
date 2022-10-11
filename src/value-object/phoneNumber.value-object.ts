@@ -22,8 +22,4 @@ export class PhoneNumberValueObject extends GenericValueObject<string> {
     }
     return new PhoneNumberValueObject(phoneNumber);
   }
-
-  toEqual(other: PhoneNumberValueObject): boolean {
-    return this.value === other.value;
-  }
 }
