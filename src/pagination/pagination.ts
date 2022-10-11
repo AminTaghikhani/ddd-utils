@@ -7,11 +7,13 @@ export class Pagination<ItemType> {
   public readonly totalPage: number;
   public readonly totalCount: number;
 
-  constructor(items: ItemType[], options: PaginationInfo) {
+  constructor(items: ItemType[], options: Omit<PaginationInfo, 'totalPage'>) {
     this.items = items;
     this.currentPage = options.currentPage;
     this.pageSize = options.pageSize;
-    this.totalPage = options.totalPage;
+    this.totalPage = Math.ceil(
+      (options.totalCount || 1) / (options.pageSize || 1),
+    );
     this.totalCount = options.totalCount;
   }
 }
