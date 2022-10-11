@@ -31,4 +31,8 @@ export class NumberValueObject extends GenericValueObject<number> {
   public static create(value: number): NumberValueObject {
     return new NumberValueObject(value);
   }
+
+  toEqual(other: NumberValueObject): boolean {
+    return this.value === other.value;
+  }
 }

@@ -28,4 +28,8 @@ export class BooleanValueObject extends GenericValueObject<boolean> {
   public static createFalsy(): BooleanValueObject {
     return new BooleanValueObject(false);
   }
+
+  toEqual(other: BooleanValueObject): boolean {
+    return this.value === other.value;
+  }
 }
