@@ -1,10 +1,6 @@
 import { GenericValueObject } from './generic-value-object';
-import { IComparable } from '../utils';
 
-export class BooleanValueObject
-  extends GenericValueObject<boolean>
-  implements IComparable<BooleanValueObject>
-{
+export class BooleanValueObject extends GenericValueObject<boolean> {
   protected constructor(value: boolean) {
     super(value);
   }

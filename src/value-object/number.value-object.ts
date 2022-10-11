@@ -1,10 +1,6 @@
 import { GenericValueObject } from './generic-value-object';
-import { IComparable } from '../utils';
 
-export class NumberValueObject
-  extends GenericValueObject<number>
-  implements IComparable<NumberValueObject>
-{
+export class NumberValueObject extends GenericValueObject<number> {
   protected MAX = Number.MAX_VALUE;
   protected MIN = Number.MIN_VALUE;
 
