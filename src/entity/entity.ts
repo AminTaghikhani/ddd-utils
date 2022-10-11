@@ -1,5 +1,4 @@
 import { UUIDIdentifier } from '../identifier';
-import * as lodash from 'lodash';
 
 export abstract class DomainEntity<PropertyInterface> {
   protected readonly _id: UUIDIdentifier;
@@ -31,7 +30,5 @@ export abstract class DomainEntity<PropertyInterface> {
     return this._updatedAt;
   }
 
-  toEqual(other: DomainEntity<PropertyInterface>): boolean {
-    return lodash.isEqual(this, other);
-  }
+  abstract toEqual(other: DomainEntity<PropertyInterface>): boolean;
 }
