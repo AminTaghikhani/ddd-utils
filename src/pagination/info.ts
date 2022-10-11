@@ -1,6 +1,6 @@
 export interface PaginationInfo {
-  currentPage: number;
-  pageSize: number;
+  page: number;
+  size: number;
   totalPage: number;
   totalCount: number;
 }

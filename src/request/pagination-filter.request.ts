@@ -6,7 +6,7 @@ export abstract class PaginationFilterRequest {
     type: 'number',
     required: true,
     default: 10,
-    minimum: 1,
+    minimum: 0,
   })
   @IsNumber({
     allowInfinity: false,
@@ -17,8 +17,8 @@ export abstract class PaginationFilterRequest {
   @ApiProperty({
     type: 'number',
     required: true,
-    default: 1,
-    minimum: 1,
+    default: 0,
+    minimum: 0,
   })
   @IsNumber({
     allowInfinity: false,
