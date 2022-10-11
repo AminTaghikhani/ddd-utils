@@ -72,7 +72,7 @@ export class ResponseWrapper<T> {
     );
   }
 
-  public static NO_CONTENT(message: string) {
+  public static NO_CONTENT(message = 'عملیات با موفقیت انجام شد.') {
     return new ResponseWrapper<string>(
       null,
       ResponseStatusCodes.NO_CONTENT,
