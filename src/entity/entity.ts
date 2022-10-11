@@ -1,7 +1,10 @@
 import { UUIDIdentifier } from '../identifier';
+import { IEqualable } from '../utils';
 import * as lodash from 'lodash';
 
-export abstract class DomainEntity<PropertyInterface> {
+export abstract class DomainEntity<PropertyInterface>
+  implements IEqualable<DomainEntity<PropertyInterface>>
+{
   protected readonly _id: UUIDIdentifier;
   protected readonly _createdAt: Date;
   protected readonly _updatedAt: Date;
