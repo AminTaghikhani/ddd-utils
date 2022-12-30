@@ -59,7 +59,6 @@ describe('Boolean value object test suite', function () {
     const unsorted = lodash.cloneDeep(objs);
     objs.sort((a, b) => a.compareTo(b));
     for (let i = 0; i < objs.length; i++) {
-      console.log(objs[i], unsorted[i]);
       expect(objs[i].toEqual(unsorted[i])).toBeFalsy();
     }
   });
