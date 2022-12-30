@@ -9,3 +9,4 @@ export * from './result';
 export * from './usecase';
 export * from './utils';
 export * from './value-object';
+export * from './specification';
