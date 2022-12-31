@@ -10,3 +10,4 @@ export * from './usecase';
 export * from './utils';
 export * from './value-object';
 export * from './specification';
+export * from './iterator';
