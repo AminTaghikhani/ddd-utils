@@ -8,8 +8,30 @@ export class NumberValueObject
   protected MAX = Number.MAX_VALUE;
   protected MIN = Number.MIN_VALUE;
 
-  protected constructor(value: number) {
+  constructor(value: unknown) {
     super(value);
+  }
+
+  protected parseValue(value: unknown): number {
+    if (typeof value === 'number') {
+      return value;
+    }
+    if (typeof value === 'string') {
+      return parseInt(value, 10);
+    }
+    if (typeof value === 'boolean') {
+      return value ? 1 : 0;
+    }
+    if (Array.isArray(value)) {
+      return parseInt(value.join(''), 10);
+    }
+    throw new TypeError('invalid value for number value object');
+  }
+
+  protected validate(): void {
+    if (this.MAX >= this.value && this.value >= this.MIN) {
+      throw new TypeError('invalid value for number value object');
+    }
   }
 
   compareTo(other: NumberValueObject): number {
@@ -30,9 +52,5 @@ export class NumberValueObject
     if (typeof step === 'undefined') step = 1;
     if (this.value - step <= this.MIN) throw new Error('Cannot decrease value');
     this._value -= step;
-  }
-
-  public static create(value: number): NumberValueObject {
-    return new NumberValueObject(value);
   }
 }
