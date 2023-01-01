@@ -8,6 +8,10 @@ export class PhoneNumberValueObject extends GenericValueObject<string> {
     super(phoneNumber);
   }
 
+  protected parseValue(value: string): string {
+    return value;
+  }
+
   public static create(phoneNumber: string): PhoneNumberValueObject {
     if (phoneNumber === undefined) {
       throw new Error('PhoneNumber cannot be undefined');
